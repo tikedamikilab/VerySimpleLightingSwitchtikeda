@@ -17,9 +17,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions{
+        exclude 'META-INF/LICENSE'
+    }
 }
 
 dependencies {
+    compile files('libs/jackson-annotatiors-2.9.0.jar')
+    compile files('libs/jackson-core-2.9.0.jar')
+    compile files('libs/jackson-databind-2.9.0.jar')
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.1.2'
